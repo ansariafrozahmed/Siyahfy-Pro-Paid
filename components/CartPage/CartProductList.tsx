@@ -44,7 +44,7 @@ const CartProductList: React.FC<Props> = ({ cartData, setRefetch }) => {
       <div className="flex  col-span-2 lg:col-span-1 items-center gap-3">
         <div className="h-[70px] w-[60px] overflow-hidden">
           <ImageWithFallback
-            src={`${process.env.BACKBLAZE_URL}/${cartData?.image?.url}`}
+            src={`${process.env.R2_PUBLIC_URL}/${cartData?.image?.url}`}
             alt={cartData?.image?.alt || "Product Image"}
             sizes="70px"
             className="h-full w-full object-cover "

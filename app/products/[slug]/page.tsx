@@ -42,7 +42,7 @@ export async function generateMetadata({ params }: Pageprops) {
       images: [
         {
           url:
-            `${process.env.BACKBLAZE_URL}/${data?.data?.image}` ||
+            `${process.env.R2_PUBLIC_URL}/${data?.data?.image}` ||
             defaultMetadata.ogimage,
           width: 1200,
           height: 630,
@@ -55,7 +55,7 @@ export async function generateMetadata({ params }: Pageprops) {
       title: data?.data?.meta_title || defaultMetadata.title,
       description: data?.data?.meta_description || defaultMetadata.description,
       images: [
-        `${process.env.BACKBLAZE_URL}/${data?.data?.image}` ||
+        `${process.env.R2_PUBLIC_URL}/${data?.data?.image}` ||
           defaultMetadata.ogimage,
       ],
     },

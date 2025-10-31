@@ -75,7 +75,7 @@ const WishListCard: React.FC<Props> = ({ data, wishlist, setWishlist }) => {
       >
         <div className="aspect-[3/3.5] overflow-hidden border">
           <ImageWithFallback
-            src={`${process.env.BACKBLAZE_URL}/${data.image.url}`}
+            src={`${process.env.R2_PUBLIC_URL}/${data.image.url}`}
             alt={data.image.alt || "Product Image"}
             height={500}
             width={500}

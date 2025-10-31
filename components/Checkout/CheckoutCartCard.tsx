@@ -52,7 +52,7 @@ const CheckoutCartCard: React.FC<Props> = ({ cartData }) => {
           }`}
         >
           <ImageWithFallback
-            src={`${process.env.BACKBLAZE_URL}/${cartData?.image.url}`}
+            src={`${process.env.R2_PUBLIC_URL}/${cartData?.image.url}`}
             alt={cartData?.image.alt || "Product Image"}
             sizes="80px"
             className="h-full w-full rounded-md  object-cover"

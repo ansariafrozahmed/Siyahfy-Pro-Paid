@@ -9,7 +9,7 @@ const UpsellCard = ({ item }: { item: any }) => {
     <div className="space-y-2">
       <div className="aspect-[4/4.5] bg-gray-100">
         <ImageWithFallback
-          src={`${process.env.BACKBLAZE_URL}/${item.images[0]}`}
+          src={`${process.env.R2_PUBLIC_URL}/${item.images[0]}`}
           alt={item.name || "Product Image"}
           height={400}
           width={400}

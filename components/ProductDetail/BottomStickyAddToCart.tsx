@@ -58,7 +58,7 @@ const BottomStickyAddToCart: React.FC<Props> = ({ data, dark, disabled }) => {
           <div className="h-[65px] w-[55px]">
             {data.gallery.length > 0 ? (
               <ImageWithFallback
-                src={`${process.env.BACKBLAZE_URL}/${data?.gallery[0].url}`}
+                src={`${process.env.R2_PUBLIC_URL}/${data?.gallery[0].url}`}
                 alt={data?.gallery[0].alt || "Product Image"}
                 sizes="50px"
                 className="h-full w-full object-cover transition-transform duration-300 hover:scale-105"

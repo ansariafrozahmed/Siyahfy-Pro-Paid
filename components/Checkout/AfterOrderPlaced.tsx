@@ -73,7 +73,7 @@ const AfterOrderPlaced = ({ orderSummary }: { orderSummary: any }) => {
             <div key={index} className="flex bg-white p-2 items-center gap-2">
               <div className="h-12 w-11 overflow-hidden rounded">
                 <ImageWithFallback
-                  src={`${process.env.BACKBLAZE_URL}/${item?.variant_image[0]}`}
+                  src={`${process.env.R2_PUBLIC_URL}/${item?.variant_image[0]}`}
                   alt={item?.name || "Product Image"}
                   className="object-cover h-full w-full"
                   height={50}

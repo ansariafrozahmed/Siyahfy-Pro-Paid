@@ -83,7 +83,7 @@ const MainProductCard: React.FC<Props> = ({ data }) => {
             {data?.gallery?.map((src, index) => (
               <ImageWithFallback
                 key={index}
-                src={`${process.env.BACKBLAZE_URL}/${src?.url}`}
+                src={`${process.env.R2_PUBLIC_URL}/${src?.url}`}
                 alt={src?.alt || "Product Image"}
                 className="h-full w-full object-cover flex-shrink-0"
                 height={400}

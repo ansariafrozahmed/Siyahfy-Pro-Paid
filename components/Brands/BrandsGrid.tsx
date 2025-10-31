@@ -35,7 +35,7 @@ const BrandsGrid = async () => {
           >
             <div className="aspect-square flex items-center justify-center">
               <ImageWithFallback
-                src={`${process.env.BACKBLAZE_URL}/${item.image}`}
+                src={`${process.env.R2_PUBLIC_URL}/${item.image}`}
                 alt={item.name || "Brand Image"}
                 className="group-hover:scale-95 duration-200"
                 height={400}

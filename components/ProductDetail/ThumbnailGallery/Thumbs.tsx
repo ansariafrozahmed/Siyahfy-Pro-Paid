@@ -30,7 +30,7 @@ export const Thumbs: React.FC<PropType> = (props) => {
             alt={data?.alt || "Product Image"}
             height={200}
             width={200}
-            src={`${process.env.BACKBLAZE_URL}/${data.url}`}
+            src={`${process.env.R2_PUBLIC_URL}/${data.url}`}
             className="h-full w-full cursor-pointer object-cover img"
           />
         </div>

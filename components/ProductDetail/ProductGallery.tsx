@@ -96,7 +96,7 @@ const ProductGallery: React.FC<Props> = ({ gallery }) => {
                     <video
                       src={
                         item.url
-                          ? `${process.env.BACKBLAZE_URL}/${item.url}`
+                          ? `${process.env.R2_PUBLIC_URL}/${item.url}`
                           : "/assets/placeholder/productPlaceholder.webp"
                       }
                       className="h-full w-full object-cover object-center"
@@ -107,7 +107,7 @@ const ProductGallery: React.FC<Props> = ({ gallery }) => {
                     />
                   ) : (
                     <ImageWithFallback
-                      src={`${process.env.BACKBLAZE_URL}/${item.url}`}
+                      src={`${process.env.R2_PUBLIC_URL}/${item.url}`}
                       height={1000}
                       width={1000}
                       alt={item?.alt || "Product Image"}
@@ -169,7 +169,7 @@ const ProductGallery: React.FC<Props> = ({ gallery }) => {
             onWheel={handleScroll}
           >
             <ImageWithFallback
-              src={`${process.env.BACKBLAZE_URL}/${open.url}`}
+              src={`${process.env.R2_PUBLIC_URL}/${open.url}`}
               height={1000}
               sizes="100vw"
               draggable
@@ -198,7 +198,7 @@ const ProductGallery: React.FC<Props> = ({ gallery }) => {
               >
                 <ImageWithFallback
                   onClick={handleZoomOut}
-                  src={`${process.env.BACKBLAZE_URL}/${item.url}`}
+                  src={`${process.env.R2_PUBLIC_URL}/${item.url}`}
                   height={1000}
                   width={1000}
                   alt={item?.alt || "Product Image"}

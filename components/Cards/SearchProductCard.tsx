@@ -27,7 +27,7 @@ const SearchProductCard: React.FC<Props> = ({ item, handleClick }) => {
       <div className="aspect-[4/5] overflow-hidden">
         <ImageWithFallback
           className="h-full w-full object-cover transition-all ease-in-out duration-200 group-hover:scale-105"
-          src={`${process.env.BACKBLAZE_URL}/${item?.image?.url}`}
+          src={`${process.env.R2_PUBLIC_URL}/${item?.image?.url}`}
           alt={`${item?.image?.alt}` || "Product Image"}
           height={300}
           width={300}

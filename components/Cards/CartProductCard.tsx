@@ -21,7 +21,7 @@ const CartProductCard: React.FC<Props> = ({ data }) => {
     <div className="space-y-2 relative group">
       <div className="aspect-[4/4.8] overflow-hidden">
         <ImageWithFallback
-          src={`${process.env.BACKBLAZE_URL}/${data.image.url}`}
+          src={`${process.env.R2_PUBLIC_URL}/${data.image.url}`}
           className={
             "h-full scale-105 duration-200 group-hover:scale-100 w-full object-cover flex-shrink-0"
           }

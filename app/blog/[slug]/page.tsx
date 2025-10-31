@@ -124,7 +124,7 @@ const Blogsinglepage = async ({ params }: any) => {
         </p> */}
         {blog?.featured_image ? (
           <ImageWithFallback
-            src={`${process.env.BACKBLAZE_URL}/${blog.featured_image}`}
+            src={`${process.env.R2_PUBLIC_URL}/${blog.featured_image}`}
             alt={blog.title || "Featured Image"}
             height={1200}
             width={1600}

@@ -56,7 +56,7 @@ const AllCategories: React.FC<CategoryProps> = async () => {
               <Image
                 height={300}
                 width={300}
-                src={`${process.env.BACKBLAZE_URL}/${item.image}`}
+                src={`${process.env.R2_PUBLIC_URL}/${item.image}`}
                 alt="cat"
                 className="h-full w-full object-contain group-hover:scale-105 transition-all ease-in-out duration-300 cursor-pointer"
               />

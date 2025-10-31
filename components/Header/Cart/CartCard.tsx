@@ -99,7 +99,7 @@ const CartCard: React.FC<Props> = ({ item }) => {
     <div className="flex relative gap-2  hover:bg-gray-50 py-3 px-5 group">
       <div className="h-[70px] border w-[65px] overflow-hidden">
         <ImageWithFallback
-          src={`${process.env.BACKBLAZE_URL}/${item?.image.url}`}
+          src={`${process.env.R2_PUBLIC_URL}/${item?.image.url}`}
           alt={item?.image.alt || "Product Image"}
           sizes="70px"
           className="h-full w-full object-cover"

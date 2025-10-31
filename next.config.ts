@@ -9,7 +9,7 @@ const nextConfig: NextConfig = {
     // BACKEND URL
     BACKEND: process.env.BACKEND,
     // BACKBLAZE
-    BACKBLAZE_URL: process.env.BACKBLAZE_URL,
+    R2_PUBLIC_URL: process.env.R2_PUBLIC_URL,
     // FRONTEND URL
     NEXT_PUBLIC_BASE_URL: process.env.NEXT_PUBLIC_BASE_URL,
     // AUTHENTICATION

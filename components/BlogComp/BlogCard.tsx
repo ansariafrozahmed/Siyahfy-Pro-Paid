@@ -21,7 +21,7 @@ const BlogCard: React.FC<BlogCard> = ({ data }) => {
     >
       <div className="aspect-[4/2.75] overflow-hidden">
         <ImageWithFallback
-          src={`${process.env.BACKBLAZE_URL}/${data.featured_image}`}
+          src={`${process.env.R2_PUBLIC_URL}/${data.featured_image}`}
           alt={data.title || "Featured Image"}
           height={4}
           width={3}

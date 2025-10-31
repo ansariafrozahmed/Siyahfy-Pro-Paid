@@ -145,7 +145,7 @@ const MobileGallery: React.FC<PropType> = (props) => {
                       height={800}
                       width={800}
                       sizes="(min-width: 1540px) 542px, (min-width: 1280px) 445px, (min-width: 1040px) 347px, (min-width: 780px) 736px, (min-width: 680px) 616px, 94.44vw"
-                      src={`${process.env.BACKBLAZE_URL}/${item.url}`}
+                      src={`${process.env.R2_PUBLIC_URL}/${item.url}`}
                       className="h-full w-full cursor-pointer object-cover"
                     />
                   </div>
@@ -209,7 +209,7 @@ const MobileGallery: React.FC<PropType> = (props) => {
                 height={800}
                 width={800}
                 sizes="(min-width: 1540px) 542px, (min-width: 1280px) 445px, (min-width: 1040px) 347px, (min-width: 780px) 736px, (min-width: 680px) 616px, 94.44vw"
-                src={`${process.env.BACKBLAZE_URL}/${open.url}`}
+                src={`${process.env.R2_PUBLIC_URL}/${open.url}`}
                 className="h-full w-full object-contain"
               />
             </div>

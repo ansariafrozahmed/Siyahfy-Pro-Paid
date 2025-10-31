@@ -114,7 +114,7 @@ const ShortVideoCarousel: React.FC<PropType> = () => {
                       className="h-full w-full object-cover pointer-events-none"
                     >
                       <source
-                        src={`${process.env.BACKBLAZE_URL}/${item.video_url}`}
+                        src={`${process.env.R2_PUBLIC_URL}/${item.video_url}`}
                         type="video/mp4"
                       />
                       Your browser does not support the video tag.
@@ -148,7 +148,7 @@ const ShortVideoCarousel: React.FC<PropType> = () => {
                 className="w-full h-full object-contain"
               >
                 <source
-                  src={`${process.env.BACKBLAZE_URL}/${selectedVideo}`}
+                  src={`${process.env.R2_PUBLIC_URL}/${selectedVideo}`}
                   type="video/mp4"
                 />
                 Your browser does not support the video tag.

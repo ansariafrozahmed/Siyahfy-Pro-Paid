@@ -69,7 +69,7 @@ const ReviewList: React.FC<ReviewListProps> = ({ data }) => {
                   className="h-[70px] w-[70px] rounded-md cursor-pointer overflow-hidden"
                 >
                   <Image
-                    src={`${process.env.BACKBLAZE_URL}/${image.url}`}
+                    src={`${process.env.R2_PUBLIC_URL}/${image.url}`}
                     alt={item?.author?.name || "Product Image"}
                     preview={{
                       mask: null,
@@ -139,7 +139,7 @@ const ReviewList: React.FC<ReviewListProps> = ({ data }) => {
                     className="h-[70px] w-[70px] rounded-md cursor-pointer overflow-hidden"
                   >
                     <Image
-                      src={`${process.env.BACKBLAZE_URL}/${image}`}
+                      src={`${process.env.R2_PUBLIC_URL}/${image}`}
                       alt={item?.author?.name || "Product Image"}
                       preview={{
                         mask: null,

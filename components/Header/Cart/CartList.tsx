@@ -109,7 +109,7 @@ const CartList: React.FC<CartListProps> = ({ cartData, fetchCartData }) => {
                 <ImageWithFallback
                   src={
                     item?.image?.url
-                      ? `${process.env.BACKBLAZE_URL}/${item.image.url}`
+                      ? `${process.env.R2_PUBLIC_URL}/${item.image.url}`
                       : "/placeholder.webp"
                   }
                   alt={item?.image?.alt || "Product Image"}

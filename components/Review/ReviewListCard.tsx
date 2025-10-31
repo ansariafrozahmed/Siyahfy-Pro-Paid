@@ -17,7 +17,7 @@ const ReviewListCard = ({
       <div className="flex items-center w-full justify-between gap-2">
         <div className="h-12 rounded overflow-hidden w-12">
           <ImageWithFallback
-            src={`${process.env.BACKBLAZE_URL}/${item?.variant_image?.[0]}`}
+            src={`${process.env.R2_PUBLIC_URL}/${item?.variant_image?.[0]}`}
             alt={"Product Image"}
             className={"object-cover h-full w-full"}
             height={50}
