@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Link from "next/link";
-import { Clock, Mail, Map, MessageCircleQuestion } from "lucide-react";
+import { Mail, MessageCircleQuestion } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
@@ -10,7 +10,6 @@ import {
 } from "../ui/accordion";
 import Image from "next/image";
 
-// Types
 interface FooterLink {
   label: string;
   link: string;
@@ -31,7 +30,6 @@ interface ContactInfo {
   content: string;
 }
 
-// Data
 const footerSections: FooterSection[] = [
   {
     label: "LEGAL",
@@ -52,49 +50,24 @@ const footerSections: FooterSection[] = [
       { label: "About Us", link: "/pages/about-us" },
       { label: "Contact Us", link: "/pages/contact-us" },
       { label: "Login", link: "/auth/login" },
-      // { label: "Blog Post", link: "/blog" },
       { label: "Sitemap", link: "/sitemap.xml" },
-    ],
-  },
-  {
-    label: "USEFUL LINKS",
-    list: [
-      // { label: "Home", link: "/auth/register" },
-      { label: "Hot Wheels Premium", link: "/collections/hotwheels-premium" },
-      // { label: "Shop by collections", link: "/collections" },
-      { label: "Hot Wheels Mainline", link: "/collections/hotwheels-mainline" },
-      { label: "Matchbox Cars", link: "/collections/matchbox-cars" },
-      { label: "Mini GT", link: "/collections/mini-gt-kaido-house" },
-      { label: "Shop by brands", link: "/brands" },
     ],
   },
 ];
 
 const contactInfo: ContactInfo[] = [
-  // {
-  //   icon: Map,
-  //   title: "Our Address",
-  //   content:
-  //     "",
-  // },
-  // {
-  //   icon: Clock,
-  //   title: "Our Timing",
-  //   content: "Mon to Sat - 11:00 AM to 7:30 PM",
-  // },
   {
     icon: MessageCircleQuestion,
     title: "Need Help ?",
-    content: "Contact: +91 90044 56480",
+    content: `Contact: ${process.env.STORE_CONTACT}`,
   },
   {
     icon: Mail,
     title: "Email Us",
-    content: "info@hutzdiecast.com",
+    content: `${process.env.STORE_EMAIL}`,
   },
 ];
 
-// Components
 const ContactItem: React.FC<ContactInfo> = ({ icon: Icon, title, content }) => (
   <div className="space-y-2">
     <div className="flex items-center gap-2">
@@ -156,7 +129,7 @@ const Footer: React.FC<Props> = ({ logoSettings, headerMenu }) => {
         <div className="space-y-7 w-full md:w-[50%] lg:w-[40%]">
           <Link href="/" className="inline-block">
             <Image
-              className={`w-full h-[80px] object-contain`}
+              className={`w-full h-[80px] filter brightness-100 invert object-contain`}
               src={`${process.env.BACKEND}/upload/WebsiteLogos/${logoSettings?.logoPath}`}
               alt={logoSettings?.altText || "Logo"}
               height={500}
@@ -170,15 +143,17 @@ const Footer: React.FC<Props> = ({ logoSettings, headerMenu }) => {
         {footerSections.map((section, idx) => (
           <FooterSection key={idx} {...section} />
         ))}
-        {/* {headerMenu && (
+        {headerMenu && (
           <FooterSection
             label="USEFUL LINKS"
-            list={headerMenu?.map((item: any) => ({
-              label: item.name,
-              link: `${item.url}`,
-            }))}
+            list={headerMenu
+              .filter((item: any) => !item?.dropdown && !item?.megamenu)
+              .map((item: any) => ({
+                label: item.name,
+                link: item.url,
+              }))}
           />
-        )} */}
+        )}
       </div>
 
       {/* Mobile Footer */}
@@ -193,6 +168,26 @@ const Footer: React.FC<Props> = ({ logoSettings, headerMenu }) => {
           {footerSections.map((section, idx) => (
             <FooterSection key={idx} {...section} isMobile />
           ))}
+          <AccordionItem value={"collections"}>
+            <AccordionTrigger>COLLECTIONS</AccordionTrigger>
+            <AccordionContent>
+              <ul className="space-y-2 text-[13px]">
+                {/* <pre>{JSON.stringify(headerMenu, null, 2)}</pre> */}
+                {headerMenu
+                  ?.filter((item: any) => !item?.dropdown && !item?.megamenu)
+                  .map((item: any, idx: number) => (
+                    <li key={idx}>
+                      <Link
+                        href={item.url}
+                        className="lowercase block hover:underline"
+                      >
+                        {item.name}
+                      </Link>
+                    </li>
+                  ))}
+              </ul>
+            </AccordionContent>
+          </AccordionItem>
         </Accordion>
       </div>
       <div className="templateContainer">
